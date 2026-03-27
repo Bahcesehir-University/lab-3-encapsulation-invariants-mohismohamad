@@ -124,7 +124,7 @@ public:
         }
         
         if (amount > balance_){
-            runtime_error("Insufficient funds.");
+            throw runtime_error("Insufficient funds.");
         }
         balance_ -= amount;
     }
@@ -138,7 +138,7 @@ public:
             throw invalid_argument ("Transfer amount must be positive.");
         }
         if (amount > balance_){
-            runtime_error("Insufficient funds.");
+            throw runtime_error("Insufficient funds.");
         }
         
         withdraw(amount);
